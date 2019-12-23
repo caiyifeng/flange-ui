@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,body {
+				background-color: #efeff4;
+			}
+			.title{
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+			<div class="title">
+				<p style="color: #0062CC;">公司名称：</p>
+				<p style="color: #0062CC;">宁波德翼机械有限公司</p>
+				<p style="color: #0062CC;">Ningbo Demand Machinery CO,LTD</p>
+				<p style="color: #0062CC;">国内(local)：董杨    17701712913</p>
+				<p style="color: #0062CC;white-space:pre">                      Email： deyisales@deyispc.com</p>
+				<p style="color: #0062CC;">国际 (Oversea)：Harry Wang</p>
+				<p style="color: #0062CC;white-space:pre">                      Email:demand@deyispc.com</p>
+			</div>
+			<div class="content">
+				<p style="margin: 10px 15px;">
+					<button id="productBtn" type="button" class="mui-btn mui-btn-danger mui-btn-block" style="padding: 5px 20px;">产品菜单(Product Menu)</button>
+					<button id="templatesBtn" type="button" class="mui-btn mui-btn-danger mui-btn-block" style="padding: 5px 20px;">螺栓需求清单(Stud Demand List)</button>
+				</p>
+
+			</div>			
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script>
+		var indexLoaded = false;
+		mui.init({
+			swipeBack:true, //启用右滑关闭功能
+			beforeback: function() {
+				mui.plusReady(function() {
+					plus.screen.lockOrientation("portrait-primary"); 
+				});
+				return true;
+			}			
+		});
+		mui.plusReady(function(){
+			var productBtn = document.getElementById("productBtn");
+			var templatesBtn = document.getElementById("templatesBtn");
+			productBtn.addEventListener('tap', function(event) {
+				var indexPage = plus.webview.getWebviewById('index');
+				if (indexPage == null) {
+					console.log("aaaaaaaaaaaaaaaa");
+				} else {
+					plus.screen.lockOrientation("landscape-primary"); 
+				}
+			
+				mui.openWindow({
+					url: 'index.html',
+					id: 'index'
+					});
+					
+			
+			}, false);	
+			
+			templatesBtn.addEventListener('tap', function() {
+				//先调接口在后台生成excel文件
+				var fileUrl = "file/flange-requirement.xlsx";
+				plus.runtime.openFile(fileUrl, {}, function(e) {
+					alert('打开失败');
+				});
+			});			
+		});
+	</script>
+</html>

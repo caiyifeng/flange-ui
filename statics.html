@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<!--<link rel="stylesheet" type="text/css" href="../css/app.css" />-->
+		<style>
+			#info {
+				padding: 20px 10px;
+			}
+			
+			.mui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="mui-content">
+			
+ 			<div class="mui-content-padded">
+				<h5 class="mui-content-padded">起始日期(Start Date)</h5>
+				<div class="mui-col-sm-9 mui-col-xs-9">
+					<input id='begId' type="text" class="mui-input-clear mui-input" readonly="true" placeholder="请选择日期">
+				</div>
+				
+				<h5 class="mui-content-padded">结束日期(End Date)</h5>
+				<div class="mui-col-sm-9 mui-col-xs-9">
+					<input id='endId' type="text" class="mui-input-clear mui-input" readonly="true" placeholder="请选择日期">
+				</div>
+				<div class="content">
+					<p style="margin: 10px 15px;">
+						<button id="queryBtn" type="button" class="mui-btn mui-btn-primary" style="padding: 5px 10px;">查询</button>
+						<button id="allExportBtn" type="button" class="mui-btn mui-btn-primary" style="padding: 5px 10px;">全部导出</button>
+					</p>
+				</div>			
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			 //mui初始化
+			var downUrl = "http:106.14.0.46/orders/";
+			mui.init({
+				swipeBack: true,
+				beforeback: function() {
+					mui.plusReady(function() {
+						plus.screen.lockOrientation("portrait-primary"); 
+					});
+					return true;
+				}				
+			});
+			var begId = document.getElementById("begId");
+			var endId = document.getElementById("endId");
+			begId.addEventListener('tap', function() {
+				var dDate = new Date();
+				var minDate = new Date();
+				minDate.setFullYear(2018, 0, 1);
+				var maxDate = new Date();
+				maxDate.setFullYear(2050, 12, 31);
+				plus.nativeUI.pickDate(function(e) {
+					var d = e.date;
+					begId.value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+				}, function(e) {
+					begId.value ="您没有选择日期";
+				}, {
+					title: "请选择日期",
+					date: dDate,
+					minDate: minDate,
+					maxDate: maxDate
+				});
+			})
+			endId.addEventListener('tap', function() {
+				var dDate = new Date();
+				var minDate = new Date();
+				minDate.setFullYear(2018, 0, 1);
+				var maxDate = new Date();
+				maxDate.setFullYear(2050, 12, 31);
+				plus.nativeUI.pickDate(function(e) {
+					var d = e.date;
+					endId.value = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+				}, function(e) {
+					endId.value ="您没有选择日期";
+				}, {
+					title: "请选择日期",
+					date: dDate,
+					minDate: minDate,
+					maxDate: maxDate
+				});
+			})	
+			var currDateStr ;
+			mui.plusReady(function(){
+				var currDate = new Date();
+				currDateStr = currDate.getFullYear() + "-" + (currDate.getMonth() + 1) + "-" + currDate.getDate();
+				document.getElementById("begId").value = currDateStr;
+				document.getElementById("endId").value = currDateStr;
+				var queryBtn = document.getElementById("queryBtn");
+				var allExportBtn = document.getElementById("allExportBtn");
+//				var url ="http://192.168.10.59:8091/flange/order/query";
+				var url ="http://106.14.0.46:8091/flange/order/query";
+				var dataInfo={};
+				var queryCondition = "";
+				
+				queryBtn.addEventListener('tap', function() {
+					var state = app.getState();
+					var userId = state.userName;
+					console.log("user_id======bbbbbbbbb======" + userId);
+					
+					var begDateStr = document.getElementById("begId").value + " 00:00:00";
+					var endDateStr = document.getElementById("endId").value + " 23:59:59";
+					
+				
+					//判断日期区间是否超过30天
+					var dateBegin = new Date(begDateStr.replace(/-/g, "/"));
+					var dateEnd = new Date(endDateStr.replace(/-/g, "/"));
+					var dateDiff = dateEnd.getTime() - dateBegin.getTime();
+					var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));
+					console.log("daydiff=============" + dayDiff);
+					if (dayDiff > 31) {
+						mui.alert("查询订单的日期区间不能超过31天", "错误", "关闭");
+						return;
+					}
+   					queryCondition = 'userId=' + userId + '&begDate=' + begDateStr + '&endDate=' + endDateStr;
+   					var wd = plus.nativeUI.showWaiting();
+					postData(url,queryCondition,
+						function(res){
+							wd.close(); //调用成功，先关闭等待的对话框
+							console.log("data=============" + res.code);
+							if(res.code != 200) {
+							// 如果密码错误，提示一下信息
+								mui.alert(res.description, "查询订单错误", "关闭");
+								return;
+							}
+							var orders = res.data;
+							console.log("aaa===aa===" + orders[0].user_id);
+							toStaticsResult(orders);
+						},
+						wd
+					);						
+				});
+
+				allExportBtn.addEventListener('tap', function() {
+					//先调接口在后台生成excel文件
+					var begDateStr = document.getElementById("begId").value + " 00:00:00";
+					var endDateStr = document.getElementById("endId").value + " 23:59:59";
+					//判断日期区间是否超过30天
+					var dateBegin = new Date(begDateStr.replace(/-/g, "/"));
+					var dateEnd = new Date(endDateStr.replace(/-/g, "/"));
+					var dateDiff = dateEnd.getTime() - dateBegin.getTime();
+					var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));
+					console.log("daydiff=============" + dayDiff);
+					if (dayDiff > 31) {
+						mui.alert("查询订单的日期区间不能超过31天", "错误", "关闭");
+						return;
+					}
+					var exportUrl ="http://106.14.0.46:8091/flange/excel/create";
+					exportCondition = 'userId=' + '&begDate=' + begDateStr + '&endDate=' + endDateStr;
+					var wd = plus.nativeUI.showWaiting();
+					postData(exportUrl,exportCondition,
+						function(res){
+							wd.close(); //调用成功，先关闭等待的对话框
+							console.log("code=============" + res.code);
+							if(res.code != 200) {
+							// 如果密码错误，提示一下信息
+								mui.alert(res.description, "查询订单错误", "关闭");
+								return;
+							}
+							var fileName = res.data.fileName;
+							console.log("filename==================" + fileName);
+
+							openFile(fileName);
+						},
+						wd
+					);						
+					
+				});	
+			
+				var self = plus.webview.currentWebview();
+ 				self.addEventListener('show',function(){
+ 					var state = app.getState();
+ 					var isAdmin= state.isAdmin;
+ 					if (isAdmin != '1') {
+ 						document.getElementById("allExportBtn").setAttribute("disabled", true);
+ 					} else {
+ 						document.getElementById("allExportBtn").removeAttribute("disabled");
+ 					}
+            	});					
+				
+				var toStaticsResult = function(dataInfo) {
+					console.log("bbbbbbbbbbbbbb");
+					plus.storage.setItem('statics_info',JSON.stringify(dataInfo));
+					plus.storage.setItem('query_condition',queryCondition);
+						mui.openWindow({
+							url: 'staticsResult.html',
+							id: 'staticsResult',
+							show: { 
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+
+				};
+			function openFile(fileName) {
+				var fileUrl = downUrl + fileName;
+				var dtask = plus.downloader.createDownload(fileUrl, {}, function(d, status) {
+					console.log("status==========" + status);
+					if(status == 200) {
+						var fileUrl = d.filename;
+						console.log("fileUrl========" + fileUrl);
+						plus.runtime.openFile(fileUrl, {}, function(e) {
+							alert('打开失败');
+						});
+					} else {
+						alert("Download failed: " + status);
+					}
+				});
+				dtask.start();
+				
+			}				
+			
+/*				var resultPage = mui.preload({
+					"id": 'staticsResult',
+					"url": 'staticsResult.html'
+				});			
+				var toStaticsResult = function(dataInfo) {
+					console.log("bbbbbbbbbbbbbb");
+					mui.fire(resultPage, 'show', null);
+					setTimeout(function() {
+						mui.openWindow({
+							id: 'staticsResult',
+							show: { 
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							},
+							extras: {data:dataInfo}
+						});
+					}, 0);
+				};
+*/				
+				
+/*				var wd = plus.nativeUI.showWaiting();
+				//构造要传递的json数据
+  				var loginInfo = {"userName": accountBox.value,   
+          					"userPassword":passwordBox.value
+    				};
+    								
+				postData(url,loginInfo,
+					function(res){
+						wd.close(); //调用成功，先关闭等待的对话框
+						console.log("data=============" + res.code);
+						if(res.code != 200) {
+							// 如果密码错误，提示一下信息
+							mui.alert(data.description, "查询错误", "关闭");
+							return;
+						}
+						var orderinfo = res.data;
+						toStatisResult(orderinfo);
+					},
+					wd
+				);*/
+				
+			})
+			
+
+			function postData(url, data, callback, waitingDialog) {  
+      			console.log("url================" + url);
+      			console.log("data=====" + JSON.stringify(data));
+    			mui.ajax(url,{  
+        			data:data, 
+        			dataType:'json',  
+        			type:'get',  
+        			contentType:"application/x-www-form-urlencoded; charset=utf-8",  
+        			timeout:60000,  
+        			success:callback,  
+        			error:function(xhr,type,errorThrown){  
+            		waitingDialog.close();  
+            		mui.alert("<网络连接失败，请重新尝试一下>", "错误", "OK", null);  
+        			}  
+    			});  
+			} 
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>控制台</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+        	.table {
+                border: 1px solid #cad9ea;
+                color: #666;
+            }
+ 
+            .table th {
+                background-repeat: repeat-x;
+                height: 30px;
+            }
+ 
+            .table td,
+            .table th {
+                border: 1px solid #cad9ea;
+                padding: 0 1em 0;
+            }
+ 
+            .table tr.alter {
+                background-color: #f5fafe;
+            }
+    	</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<table class="table" id='usertable'>
+				<thead style="font-size: 10px;">
+					<th><input id="allboxs" onclick="allcheck()" type="checkbox"/></th>
+					<th>Id</th>
+					<th>用户账号</th>
+					<th>公司名称</th>
+					<th>手机号码</th> 
+					<th>状态</th>
+					<th>创建时间</th>
+				</thead>			
+			</table>			
+		</div>
+		<div class="mui-content-padded">
+			<button type="button" class="mui-btn mui-btn-primary" id="queryBtn">查询</button>
+			<button type="button" class="mui-btn mui-btn-green" id="verifyBtn">通过</button>
+			<button type="button" class="mui-btn mui-btn-danger mui-hidden" id="cancelBtn" >注销</button>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			var jslst=[];
+			mui.init({
+				swipeBack: false,
+				beforeback: function() {
+					mui.plusReady(function() {
+						plus.screen.lockOrientation("portrait-primary"); 
+					});
+					return true;
+				}
+				
+			});
+			var table = document.getElementById("usertable")
+			mui.plusReady(function(){
+/*				plus.screen.lockOrientation("landscape-primary") ;
+*/
+				var queryBtn = document.getElementById("queryBtn");
+				var verifyBtn = document.getElementById("verifyBtn");
+				var cancelBtn = document.getElementById("cancelBtn");
+//				var queryUrl ="http://192.168.10.59:8091/flange/verify/pendingUser";
+				var queryUrl ="http://106.14.0.46:8091/flange/verify/pendingUser";
+				queryBtn.addEventListener('tap', function() {
+					console.log("aaaaaaaaaaaaaaaaa");
+					var wd = plus.nativeUI.showWaiting();
+					postData(queryUrl,'',
+						function(res){
+							wd.close(); //调用成功，先关闭等待的对话框
+							console.log("data=============" + res.code);
+							if(res.code != 200) {
+							// 如果密码错误，提示一下信息
+								mui.alert(res.description, "查询待审核的注册客户信息出错", "关闭");
+								return;
+							}
+							var jsdata = res.data;
+							createTable(jsdata);
+						},
+						wd,
+						'get'
+					);
+				});			
+//				var verifyUrl ="http://192.168.10.59:8091/flange/verify/pass";
+				var verifyUrl ="http://106.14.0.46:8091/flange/verify/pass";
+				verifyBtn.addEventListener('tap', function() {
+					console.log("aaaaaaaaaaaaaaaaa");
+					//取得所有选中checkBox的用户
+					var selectedData = getSelectedUser();
+					console.log("aaaaaaaaaaaaaaaaa" + selectedData.length);
+					if (selectedData.length == 0) {
+						mui.alert("请选择要通过的记录", "错误", "关闭");
+						return;
+					}
+					var dataInfo = {
+						"selected_ids": selectedData
+					};
+					console.log("id===========" + dataInfo['selected_ids'][0]);
+					var wd = plus.nativeUI.showWaiting();
+					postData(verifyUrl,dataInfo,
+						function(res){
+							wd.close(); //调用成功，先关闭等待的对话框
+							console.log("data=============" + res.code);
+							if(res.code != 200) {
+							// 如果密码错误，提示一下信息
+								mui.alert(res.description, "审核注册客户出现异常", "关闭");
+								return;
+							}
+							mui.alert("已完成注册审核", "成功", "关闭");
+							deleteAll();
+						},
+						wd,
+						'post'
+					);
+				});	
+				cancelBtn.addEventListener('tap', function() {
+					deleteAll();
+
+				});					
+			});
+
+			function postData(url, data, callback, waitingDialog,type) {  
+      			console.log("url================" + url);
+    			mui.ajax(url,{  
+        			data:data, 
+        			dataType:'json',  
+        			type: type,  
+        			contentType:"application/json; charset=utf-8",  
+        			timeout:60000,  
+        			success:callback,  
+        			error:function(xhr,type,errorThrown){  
+            		waitingDialog.close();  
+            		mui.alert("<网络连接失败，请重新尝试一下>", "错误", "OK", null);  
+        			}  
+    			});  
+			} 
+			
+			function createTable(jslst) {
+				if (table.rows.length > 1) {
+					console.log("aaaaaaaaaaaa");
+					deleteAll();					
+				} else {
+					console.log("bbbbbbbbbbbbbbbbbb");
+					
+				}
+				for(var i=0;i<jslst.length;i++){
+					var tr = document.createElement('tr');
+					tr.style.fontSize="10px";
+					console.log("id========" + jslst[i].id); 
+					var htmlStr ="<td><input  name=\"boxs\" type=\"checkbox\"/></td><td>"+jslst[i].id+"</td><td>"+jslst[i].user_id+"</td><td>"+jslst[i].company+"</td>";
+					htmlStr += "<td>"+jslst[i].phone+"</td><td>"+jslst[i].status+"</td><td>"+jslst[i].create_time+"</td>";
+					tr.innerHTML = htmlStr;
+					table.appendChild(tr);
+				}
+				
+			}
+			
+			function deleteAll() {
+    			var tab=document.getElementById('usertable');
+    			for(var r=tab.rows.length-1;r>0;r--) { 
+    				console.log("r=============" + r);
+        			tab.deleteRow(r); 
+    			}
+			}			
+			function allcheck() {
+             	 var nn = document.getElementById("allboxs").checked; //判断th中的checkbox是否被选中，如果被选中则nn为true，反之为false
+                 if(nn == true) {
+                     //var namebox = $("input[name^='boxs']");  //获取name值为boxs的所有input
+                     var namebox = document.getElementsByName("boxs");
+                     for(i = 0; i < namebox.length; i++) {
+                         namebox[i].checked=true;    //js操作选中checkbox
+                        
+                     }
+                 }
+                 if(nn == false) {
+                     var namebox = document.getElementsByName("boxs");
+                     for(i = 0; i < namebox.length; i++) {
+                         namebox[i].checked=false;
+                     }
+                 }
+             }		
+             
+             function getSelectedUser() {
+             	var namebox = document.getElementsByName("boxs");
+             	var tableObj = document.getElementById("usertable");
+             	var userIds = [];
+                for(i = 0; i < namebox.length; i++) {
+                	if (namebox[i].checked == true) {
+                		var id = tableObj.rows[i+1].cells[1].innerHTML;
+                		userIds.push(id);
+                	}
+                } 
+                return userIds;
+             }
+		</script>
+	</body>
+</html>

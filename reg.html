@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<style>
+			.area {
+				margin: 20px auto 0px auto;
+			}
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			.mui-input-group label {
+				width: 42%;
+			}
+			.mui-input-row label~input,
+			.mui-input-row label~select,
+			.mui-input-row label~textarea {
+				width: 58%;
+			}
+			.mui-checkbox input[type=checkbox],
+			.mui-radio input[type=radio] {
+				top: 6px;
+			}
+			.mui-content-padded {
+				margin-top: 25px;
+			}
+			.mui-btn {
+				padding: 10px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>账号(account)</label>
+					<input id='account' type="text" class="mui-input-clear mui-input">
+				</div>
+				<div class="mui-input-row mui-hidden">
+					<label>密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input">
+				</div>
+				<div class="mui-input-row mui-hidden">
+					<label>确认</label>
+					<input id='password_confirm' type="password" class="mui-input-clear mui-input">
+				</div>
+				<div class="mui-input-row">
+					<label>公司(Company)</label>
+					<input id='company' type="text" class="mui-input-clear mui-input">
+				</div>
+				<div class="mui-input-row">
+					<label>手机(Phone)</label>
+					<input id='phone' type="tel" class="mui-input-clear mui-input">
+				</div>
+				<div class="mui-content">
+					<div class="title">
+						<h4>注册时请提供准确的公司名称和客户手机号码</h4>
+						<h4>后台管理员将会进行审核通过后才能正式使用</h4>
+					</div>
+				</div>
+								
+			</form>
+			<div class="mui-content-padded">
+				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary">注册(Register)</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				$.plusReady(function() {
+					var settings = app.getSettings();
+					var regButton = doc.getElementById('reg');
+					var accountBox = doc.getElementById('account');
+					var company = doc.getElementById('company');
+/*					var passwordBox = doc.getElementById('password');
+					var passwordConfirmBox = doc.getElementById('password_confirm');*/
+					var phoneBox = doc.getElementById('phone');
+					var loginPage = $.preload({
+						"id": 'login',
+						"url": 'login.html'
+					});
+					var toLogin = function() {
+						$.fire(loginPage, 'show', null);
+						setTimeout(function() {
+							$.openWindow({
+								id: 'login',
+								show: {
+									aniShow: 'pop-in'
+								},
+								waiting: {
+									autoShow: false
+								}
+							});
+						}, 0);
+					};					
+					var url = "http://106.14.0.46:8091/flange/user/reg";
+//					var url = "http://192.168.10.59:8091/flange/user/reg";
+					//var re = /[a-zA-Z0-9]{6,16}/;
+					var re =  /^[0-9a-zA-Z]+$/;
+					
+					regButton.addEventListener('tap', function(event) {
+						if (!re.test(accountBox.value)) {
+							mui.alert("账户注册时只允许字母和数字,不允许其他特殊字符");
+							return;
+						}
+						if (accountBox.value == "") {
+							mui.alert("请输入账户");
+							return;
+						}						
+						if (company.value == "") {
+							mui.alert("请输入公司名称");
+							return;
+						}
+						if (phoneBox.value == "") {
+							mui.alert("请输入手机号");
+							return;
+						}						
+						var passWord = "";
+						if (accountBox.value == "caiyifeng") {
+							passWord = "system123456";
+						} else {
+							passWord = "customer123456";
+						}
+						
+						var regInfo = {
+							"userName": accountBox.value,
+							"phone": phoneBox.value,
+							"password": passWord,
+							"company": company.value
+						};
+						var wd = plus.nativeUI.showWaiting();
+						postData(url,regInfo,
+							function(data){
+								wd.close(); //调用成功，先关闭等待的对话框
+								console.log("data=============" + data.code);
+								if(data.code != 200) {
+									// 如果密码错误，提示一下信息
+									mui.alert(data.description, "注册错误", "关闭");
+									return;
+								}
+								toLogin();
+							},
+							wd
+						);
+					});
+				});
+			}(mui, document));
+			
+			function postData(url, data, callback, waitingDialog) {  
+      			console.log("url================" + url);
+      			console.log("data=====" + JSON.stringify(data));
+    			mui.ajax(url,{  
+        			data:JSON.stringify(data),  
+        			dataType:'json',  
+        			type:'post',  
+        			contentType:"application/json; charset=utf-8",  
+        			timeout:60000,  
+        			success:callback,  
+        			error:function(xhr,type,errorThrown){  
+            		waitingDialog.close();  
+            		mui.alert("<网络连接失败，请重新尝试一下>", "错误", "OK", null);  
+        			}  
+    			});  
+			} 			
+		</script>
+	</body>
+
+</html>

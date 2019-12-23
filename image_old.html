@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />		
+		<style>
+			.NavLinks{
+    			position: absolute;
+    			width: 80%;
+    			top: 0px;
+    			bottom:10px; 
+/*    			overflow: hidden;
+    			zoom:1; */
+			}
+ 
+			.NavLinks img{
+    			left: 0px;
+    			top: 45px;
+    			position: absolute;
+    			
+				display: block;
+    			width: 100%;
+    			height: 85%;
+/*    			background-size:100% 100%;
+*/			}
+
+
+		</style>
+	</head>
+
+	<body >
+<!--		<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">pressure Rating</h1>
+		</header>-->
+<!--		<div class="mui-content">
+			<div style="float:left">
+				<h1 class="mui-title">pressure Rating</h1>
+			</div>
+		</div>-->
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-icon mui-icon-left-nav mui-pull-left" id="backId"></a>
+			<h1 class="mui-title mui-text-left" id="title">pressure Rating</h1>
+			<div class="mui-scroll-wrapper">
+				<marquee direction="up" behavior="alternate" scrollamount="1" scrolldelay="200" loop="-1" width="700" height="50" hspace="0" vspace="0">
+					<h4 class="mui-title" style="color:#CF2D28">宁波翼德 17701712913;email: jsudy@126.com</h4>
+				</marquee>				
+			</div>
+		</header>
+		<div class="mui-row " style="background-color:#FFFFFF" >
+				<div class="mui-col-sm-9 mui-col-xs-9" style="background-color: white;margin-top: 60px;"  id="image_item"><img id="img1" style="width:100%;"></div>
+				<div class="mui-col-sm-3 mui-col-xs-3" style="background-color: white;margin-top: 45px;">
+			<form class="mui-input-group">
+				<div display="inline-block" class="mui-input-row" style="height: 62px" >
+					<li>
+   						<span style="font-size: 10px;">环垫型号:</span>
+      					<span id="liRing" onclick="onSpan(this.id)">
+      						<input id="ringText" type="text" class="mui-text-center" value="" style="font-size: 12px;border:solid #888888;" placeholder="请选择" readonly="" >
+      						<input id="ringVal" type="hidden" value="">
+      						<input id="ringCode" type="hidden" value="">
+  						</span>
+					</li>
+			
+				</div>
+				<div display="inline-block" class="mui-input-row" style="height: 62px" >
+					<li>
+   						<span style="font-size: 10px;">螺栓:</span>
+      					<span id="liStud" onclick="onSpan(this.id)" >
+      						<input id="studText" type="text" class="mui-text-center" value="" style="font-size: 12px;border:solid #888888;" placeholder="请选择" readonly="" >
+      						<input id="studCode" type="hidden" value="">
+      						<input id="studDiameter" type="hidden" value="">
+      						<input id="studLength" type="hidden" value="">
+
+  						</span>
+					</li>
+			
+				</div>
+				<div class="mui-input-row" style="height: 40px">
+					<li>
+						<span style="font-size: 12px;">数量:</span>
+						<div class="mui-numbox" style="margin-left: 0px;">
+  						<!-- "-"按钮，点击可减小当前数值 -->
+  							<button class="mui-btn mui-numbox-btn-minus" type="button" >-</button>
+  							<input id="orderNum" class="mui-numbox-input" type="number" />
+  							<!-- "+"按钮，点击可增大当前数值 -->
+  							<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+						</div>						
+					</li>
+				</div>
+				<div class="mui-button-row" style="height: 45px">
+					<button type="button" class="mui-btn" id="submitId">提           交</button>
+					<button type="button" class="mui-btn" id="reportId">统计&报表</button>
+				</div>				
+			</form>
+				</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>		
+		<script src="js/app.js"></script> 
+		<script type="text/javascript">
+			var dataInfo = {};
+			var firstCata = "";
+			var secondCata = "";
+			
+			(function($, doc) {
+				var rangInfo;
+				var tapInfo;
+				var boltInfo;
+				var keyMap = {
+					"userName": "客户",
+					"ringName": "RING NUMBER",
+					"tapName":  "TAP NAME",
+					"boltName": "BOLT NAME",
+					"orderNum": "数量",
+					"item1": "一级目录",
+					"item2": "二级目录",
+					"createTime": "提交时间"
+				};
+				$.init({
+					swipeBack: false,
+					beforeback: function() {
+					mui.plusReady(function() {
+						plus.screen.lockOrientation("landscape-primary"); 
+					});
+					return true;
+				}
+					
+				});
+				var fileUrl = "http:106.14.0.46/images/"
+				$.plusReady(function() {
+					plus.screen.lockOrientation("landscape-primary") ;
+					var imageName;
+					var holeNumber;
+					var submitBtn = doc.getElementById('submitId');
+					var reportBtn = doc.getElementById('reportId');
+					var backEvent = doc.getElementById('backId');
+					var ringVal = doc.getElementById('ringVal');
+					var ringCode = doc.getElementById('ringCode');
+					var studCode = doc.getElementById('studCode');
+					var studDiameter  = doc.getElementById('studDiameter');
+					var studLength = doc.getElementById('studLength');
+					var orderNum = doc.getElementById('orderNum');
+					
+					var state = app.getState();
+					
+					orderNum.value="";					
+					mui.get('file/images_old.json', function(data) {
+						console.log("image.html================aaaaaaaaaaaaa");
+						dataInfo = data;
+/*						var productInfo = data[key];
+						imageName = productInfo['image'];
+						holeNumber = productInfo['hole_number'];
+						this.rangInfo = productInfo["ring_number"];
+						this.tapInfo = productInfo['stud'];
+						setImg("img1", fileUrl + imageName);
+*/						
+/*        				var list_html = "<img src='" + imageName + "' style='width:100%'/>"  
+                		document.getElementById("image_item").innerHTML = list_html;
+*/        			
+					},'json');
+
+					var self = plus.webview.currentWebview();
+ 					self.addEventListener('show',function(){
+ 						firstCata = plus.storage.getItem('image_first_cata');
+ 						secondCata = plus.storage.getItem('image_second_cata');
+						console.log("item==1==aaaaaa=" + firstCata);
+						console.log("item==2===aaaaaaa" + secondCata);
+                		console.log('show');
+                		var key = firstCata + "_" + secondCata;
+						var title=firstCata + '"-'+ secondCata;
+    					document.getElementById("title").textContent=title;
+						var productInfo = dataInfo[key];
+						imageName = productInfo['image'];
+						holeNumber = productInfo['hole_number'];
+						this.rangInfo = productInfo["ring_number"];
+						this.tapInfo = productInfo['stud'];
+						setImg("img1", fileUrl + imageName);
+            		});					
+					var url = "http://106.14.0.46:8091/flange/order/submit";
+//					var url = "http://192.168.10.59:8091/flange/order/submit";
+					var exportInfo;
+					submitBtn.addEventListener('tap', function(event) {
+						console.log("aaaaaaaaaaaaaaaa")
+						console.log("studDiameter===========" + studDiameter.value);
+						console.log("studLength===========" + studLength.value);
+						var dataInfo = {
+							"userName": state.userName,
+							"ringName": ringCode.value,
+							"ringNumber": ringVal.value,
+							"studName": studCode.value,
+							"studDiameter": studDiameter.value,
+							"studLength":studLength.value,
+							"studHoles": holeNumber,
+							"orderNum": orderNum.value,
+							"item1": firstCata,
+							"item2": secondCata,
+							"imageName": imageName
+						};
+						exportInfo = dataInfo;
+						var wd = plus.nativeUI.showWaiting();
+						postData(url,dataInfo,
+							function(ret){
+								wd.close(); //调用成功，先关闭等待的对话框
+								console.log("ret=============" + ret.code);
+								if(ret.code != 200) {
+									// 如果密码错误，提示一下信息
+									mui.alert(ret.description, "提交错误", "关闭");
+									return;
+								}
+								ringVal.value="";
+								doc.getElementById("ringText").value="";
+								ringCode.value="";
+								doc.getElementById("studText").value="";
+								studCode.value="";
+								studDiameter.value="";
+								studLength.value="";
+								retData = ret.data;
+								orderNum.value="";
+								
+								exportInfo['createTime'] = retData['create_time'];
+							},
+							wd
+						);
+					});		
+					reportBtn.addEventListener('tap', function(event) {
+						console.log("aaaaaaaaaaaaaaaa");
+						plus.webview.show('main');
+/*						  mui.openWindow({
+						  		url: 'main.html',
+    							id:'mail'
+  							});*/
+  							console.log("bbbbbbbbbbb");
+						var mainPage = plus.webview.getWebviewById('main');
+						mui.fire(mainPage,"statics");
+  							console.log("cccccccccccc");
+					});	
+					
+					backEvent.addEventListener('tap', function(event) {
+
+						  mui.openWindow({
+						  		url: 'index.html',
+    							id:'index'
+  							});
+
+					});						
+				});
+			}(mui, document));
+			
+   			function setImg(imgId, loadUrl) {
+                if (imgId == null || loadUrl == null) return;
+                //图片下载成功 默认保存在本地相对路径的"_downloads"文件夹里面, 如"_downloads/logo.jpg"
+                var filename = loadUrl.substring(loadUrl.lastIndexOf("/") + 1, loadUrl.length);
+                var relativePath = "_downloads/" + filename;
+                //检查图片是否已存在
+                plus.io.resolveLocalFileSystemURL(relativePath, function(entry) {
+                    console.log("图片存在,直接设置=" + relativePath);
+                    //如果文件存在,则直接设置本地图片
+                    setImgFromLocal(imgId, relativePath);
+                }, function(e) {
+                    console.log("图片不存在,联网下载=" + relativePath);
+                    //如果文件不存在,联网下载图片
+                    setImgFromNet (imgId,loadUrl,relativePath);
+                });
+            }
+        /*给图片标签<img>设置本地图片
+         * imgId 图片标签<img>的id
+         * relativePath 本地相对路径 例如:"_downloads/logo.jpg"
+         */
+        function setImgFromLocal(imgId, relativePath) {
+                //本地相对路径("_downloads/logo.jpg")转成SD卡绝对路径("/storage/emulated/0/Android/data/io.dcloud.HBuilder/.HBuilder/downloads/logo.jpg");
+                var sd_path = plus.io.convertLocalFileSystemURL(relativePath);
+                //给<img>设置图片
+                $id(imgId).setAttribute("src", sd_path);
+            }
+        /*联网下载图片,并设置给<img>*/
+        function setImgFromNet (imgId,loadUrl,relativePath) {
+            //先设置下载中的默认图片
+            console.log("login.htem==========aaaaaaaaaaaaaaaa" );
+//            $id(imgId).setAttribute("src", "images/loading.png");
+            //创建下载任务
+            console.log("login.htem==========aaaaaaaaaaaaaaaa" + loadUrl);
+            var dtask = plus.downloader.createDownload(loadUrl, {}, function(d, status) {
+                if (status == 200) {
+                    //下载成功
+                    console.log("下载成功=" + relativePath);
+                    setImgFromLocal(imgId, d.filename);
+                } else {
+                    //下载失败,需删除本地临时文件,否则下次进来时会检查到图片已存在
+                    console.log("下载失败=" + status+"=="+relativePath);
+                    //dtask.abort();//文档描述:取消下载,删除临时文件;(但经测试临时文件没有删除,故使用delFile()方法删除);
+                    if (relativePath!=null)
+                        delFile(relativePath);
+                }
+            });
+            //启动下载任务
+            dtask.start();
+        }
+			
+		function $id(id) {
+            return document.getElementById(id);
+        }	
+        
+			function onSpan(objId) {
+    			var natureLoss = new mui.PopPicker();
+    			var textId;
+    			var valueId;
+    			var diameterId;
+    			var studLengthId;
+    			var codeId;
+				if (objId === 'liRing') {
+					natureLoss.setData(this.rangInfo);
+					textId = document.getElementById("ringText");
+					codeId = document.getElementById("ringCode");
+					valueId =document.getElementById("ringVal");
+				} else if(objId === 'liStud') {
+					natureLoss.setData(this.tapInfo);
+					textId = document.getElementById("studText");
+					codeId = document.getElementById("studCode");
+					diameterId = document.getElementById("studDiameter");
+					studLengthId = document.getElementById("studLength");
+				} 
+    			
+    			natureLoss.show(function (items) {
+	   				if (objId === 'liRing') {
+        				document.getElementById(textId.getAttribute("id")).value = items[0].text;
+        				document.getElementById(valueId.getAttribute("id")).value = items[0].value;
+        				document.getElementById(codeId.getAttribute("id")).value = items[0].code;	   					
+					} else if(objId === 'liStud') {
+        				document.getElementById(textId.getAttribute("id")).value = items[0].text;
+        				document.getElementById(codeId.getAttribute("id")).value = items[0].code;
+        				document.getElementById(diameterId.getAttribute("id")).value = items[0].stud_diameter;
+        				document.getElementById(studLengthId.getAttribute("id")).value = items[0].stud_length;	   	
+        				
+						console.log("============" + diameterId.value);
+						console.log("=============" + studLengthId.value);
+					}
+
+    			});
+			}	
+			
+			function postData(url, data, callback, waitingDialog) {  
+      			console.log("url================" + url);
+      			console.log("data=====" + JSON.stringify(data));
+    			mui.ajax(url,{  
+        			data:JSON.stringify(data),  
+        			dataType:'json',  
+        			type:'post',  
+        			contentType:"application/json; charset=utf-8",  
+        			timeout:60000,  
+        			success:callback,  
+        			error:function(xhr,type,errorThrown){  
+            		waitingDialog.close();  
+            		mui.alert("<网络连接失败，请重新尝试一下>", "错误", "OK", null);  
+        			}  
+    			});  
+			}			
+		</script>
+	</body>
+
+</html>

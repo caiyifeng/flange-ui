@@ -1,0 +1,54 @@
+\"image\":\"images/10M.png\",\"rang_number\":[{\"value\":\"R-24\",\"text\":\"STANDARD\"},{\"value\":\"RX-24\",\"text\":\"PRESSURE ENERGIZED\"}]	
+
+
+回退时候显示横竖方向显示
+提交的时候，多次提交会报错
+发送朋友圈时发邮件
+header的电话，邮箱是滚动的。
+
+mui.init({
+    beforeback: function(){
+        //获得列表界面的webview
+        var list = plus.webview.getWebviewById('list');
+        //触发列表界面的自定义事件（refresh）,从而进行数据刷新
+        mui.fire(list,'refresh');
+        //返回true，继续页面关闭逻辑
+        return true;
+    }
+});
+
+
+
+
+		Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
+		final String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
+		Properties props = new Properties();
+		props.setProperty("mail.smtp.host", mailProperties.getHost());
+		props.setProperty("mail.smtp.socketFactory.class", SSL_FACTORY);
+		props.setProperty("mail.smtp.socketFactory.fallback", "false");
+		props.setProperty("mail.smtp.port", String.valueOf(mailProperties.getPort()));
+		props.setProperty("mail.smtp.socketFactory.port", String.valueOf(mailProperties.getPort()));
+		props.put("mail.smtp.auth", "true");
+		final String username = mailProperties.getUsername();
+		final String password = mailProperties.getPassword();
+		Session session = Session.getDefaultInstance(props, new Authenticator(){
+		      protected PasswordAuthentication getPasswordAuthentication() {
+		          return new PasswordAuthentication(username, password);
+		      }});
+		
+		Message msg = new MimeMessage(session);
+		  try {
+			msg.setFrom(new InternetAddress(mailProperties.getUsername()));
+			  msg.setRecipients(Message.RecipientType.TO, 
+					    InternetAddress.parse(this.toAccount,false));
+					  msg.setSubject(this.mailSubject);
+					  String text = String.format(this.mailMessage, userInfo.getCompany());
+					  msg.setText(text);
+					  msg.setSentDate(new Date());
+					  Transport.send(msg);
+{"userName":"caiyifeng","ringName":"STANDARD","ringNumber":"-","studName":"STUD_BOLT","studDiameter":"3/4\"",
+"studLength":"5 1/2\"","studHoles":8,"orderNum":"6","item1":"1 13/16","item2":"10M",
+"imagePath":"images/10M.png"} 
+
+{"userName":"caiyifeng","ringName":"PRESSURE ENERGIZED","ringNumber":"BX-151","studName":"STUD_BOLT",
+"studHoles":8,"orderNum":"3","item1":"1 13/16","item2":"10M","imagePath":"images/10M.png"}

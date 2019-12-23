@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+        	.table {
+                border: 1px solid #cad9ea;
+                color: #666;
+            }
+ 
+            .table th {
+                background-repeat: repeat-x;
+                height: 30px;
+            }
+ 
+            .table td,
+            .table th {
+                border: 1px solid #cad9ea;
+                padding: 0 1em 0;
+            }
+ 
+            .table tr.alter {
+                background-color: #f5fafe;
+            }
+    	</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		</header>
+		<div class="mui-content">
+			<table class="table" id='ordertable'>
+				<thead style="font-size: 10px;">
+					<th>订单Id</th>
+					<th>用户账号Account</th>
+					<th>订单数量Amount</th>
+					<th>环垫类型Type</th>
+					<th>环垫型号Ring Number</th>
+					<th>螺栓类型Stud Type</th>
+					<th>螺栓直径Diameter</th>
+					<th>螺栓总长Stud Length</th>
+					<th>螺栓孔总数Total Holes</th>
+					<th>法兰尺寸Flange Size</th>
+					<th>压力Pressure</th>
+					<th>提交时间Create Time</th>
+				</thead>			
+			</table>			
+		</div>
+		<div class="mui-content-padded">
+			<button type="button" class="mui-btn mui-btn-primary" id="exportBtn">文件导出</button>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			var jslst=[];
+			var downUrl = "http:106.14.0.46/orders/";
+			mui.init({
+				swipeBack: false,
+				beforeback: function() {
+					mui.plusReady(function() {
+						plus.screen.lockOrientation("portrait-primary"); 
+					});
+					return true;
+				}
+				
+			});
+			var table = document.getElementById("ordertable")
+			mui.plusReady(function(){
+				plus.screen.lockOrientation("landscape-primary") ;
+				var exportCondition = "";
+				
+				var exportBtn = document.getElementById("exportBtn");
+//				var url ="http://192.168.10.59:8091/flange/excel/create";
+				var url ="http://106.14.0.46:8091/flange/excel/create";
+				
+				//exportCondition ='fileName=caiyifeng_1571411674436.xlsx';
+				exportBtn.addEventListener('tap', function() {
+					//先调接口在后台生成excel文件
+					var wd = plus.nativeUI.showWaiting();
+					postData(url,exportCondition,
+						function(res){
+							wd.close(); //调用成功，先关闭等待的对话框
+							console.log("code=============" + res.code);
+							if(res.code != 200) {
+							// 如果密码错误，提示一下信息
+								mui.alert(res.description, "查询订单错误", "关闭");
+								return;
+							}
+							var fileName = res.data.fileName;
+							console.log("filename==================" + fileName);
+
+							openFile(fileName);
+						},
+						wd
+					);						
+					
+				});		
+				
+				var self = plus.webview.currentWebview();
+ 				self.addEventListener('show',function(){
+ 					var staticsInfo = plus.storage.getItem('statics_info');
+ 					console.log("aaaaaaaaaaaaaaaaaaaa====" + jslst);
+ 					var jslst = JSON.parse(staticsInfo);
+					exportCondition = plus.storage.getItem('query_condition');
+ 					console.log("exportCondition===============" + exportCondition);
+					for(var i=0;i<jslst.length;i++){
+						var tr = document.createElement('tr');
+						tr.style.fontSize="10px";
+						console.log("id========" + jslst[i].id); 
+						var htmlStr ="<td style=\"text-align:center\">"+jslst[i].id+"</td><td style=\"text-align:center\">"+jslst[i].user_id+"</td><td style=\"text-align:center\">"+jslst[i].order_number+"</td>";
+						htmlStr += "<td style=\"text-align:center\">"+jslst[i].ring_name+"</td><td style=\"text-align:center\">"+jslst[i].ring_number+"</td><td style=\"text-align:center\">"+jslst[i].stud_name+"</td>";
+						htmlStr += "<td style=\"text-align:center\">"+jslst[i].stud_diameter+"</td><td style=\"text-align:center\">"+jslst[i].stud_length+"</td><td style=\"text-align:center\">"+jslst[i].total_holes+"</td>";
+						htmlStr += "<td style=\"text-align:center\">"+jslst[i].item1+"</td><td style=\"text-align:center\">"+jslst[i].item2+"</td><td style=\"text-align:center\">"+jslst[i].create_time+"</td>";
+						tr.innerHTML = htmlStr;
+						table.appendChild(tr);
+					}
+ 					
+           		});					
+			});
+
+			function openFile(fileName) {
+				var fileUrl = downUrl + fileName;
+				var dtask = plus.downloader.createDownload(fileUrl, {}, function(d, status) {
+					console.log("status==========" + status);
+					if(status == 200) {
+						var fileUrl = d.filename;
+						console.log("fileUrl========" + fileUrl);
+						plus.runtime.openFile(fileUrl, {}, function(e) {
+							alert('打开失败');
+						});
+					} else {
+						alert("Download failed: " + status);
+					}
+				});
+				dtask.start();
+				
+			}
+			
+			function postData(url, data, callback, waitingDialog) {  
+      			console.log("url================" + url);
+      			console.log("data=====" + JSON.stringify(data));
+    			mui.ajax(url,{  
+        			data:data, 
+        			dataType:'json',  
+        			type:'get',  
+        			contentType:"application/x-www-form-urlencoded; charset=utf-8",  
+        			timeout:60000,  
+        			success:callback,  
+        			error:function(xhr,type,errorThrown){  
+            		waitingDialog.close();  
+            		mui.alert("<网络连接失败，请重新尝试一下>", "错误", "OK", null);  
+        			}  
+    			});  
+			} 
+			
+			function allcheck() {
+             	 var nn = document.getElementById("allboxs").checked; //判断th中的checkbox是否被选中，如果被选中则nn为true，反之为false
+                 if(nn == true) {
+                 	console.log("aaaaaaaaaaaaaaaaaaa");
+                     //var namebox = $("input[name^='boxs']");  //获取name值为boxs的所有input
+                     var namebox = document.getElementsByName("boxs");
+                     for(i = 0; i < namebox.length; i++) {
+                         namebox[i].checked=true;    //js操作选中checkbox
+                     }
+                 }
+                 if(nn == false) {
+                 	console.log("bbbbbbbbbbbbbbbbb");
+                     var namebox = document.getElementsByName("boxs");
+                     for(i = 0; i < namebox.length; i++) {
+                         namebox[i].checked=false;
+                     }
+                 }
+             }	
+		</script>
+	</body>
+</html>

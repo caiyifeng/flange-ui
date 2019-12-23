@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/mui.picker.css" rel="stylesheet" />
+		<link href="css/mui.poppicker.css" rel="stylesheet" />
+		
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.poppicker.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+				plus.screen.unlockOrientation("landscape-primary");
+			})
+function onSpan(objId) {
+    var natureLoss = new mui.PopPicker();
+    natureLoss.setData([{
+        value: '0',
+        text: '文本0'
+    }, {
+        value: '1',
+        text: '文本1'
+    }, {
+        value: '2',
+        text: '文本2'
+    }, {
+        value: '3',
+        text: '文本3'
+    }]);
+    var whetherStaButton = document.getElementById(objId);
+    var id = whetherStaButton.childNodes[1].getAttribute("id");
+    var sibId = whetherStaButton.childNodes[3].getAttribute("id");
+    natureLoss.show(function (items) {
+        document.getElementById(id).value = items[0].text;
+        document.getElementById(sibId).value = items[0].value;
+    });
+}
+		
+		</script>
+<div class="mui-input-row">
+
+					<li>
+   						<span>文字</span>
+      					<span id="liSix" onclick="onSpan(this.id)">
+      <input id="sixText" type="text" value="文本0" placeholder="请选择" readonly="">
+      <input id="sixVal" type="hidden" value="0">
+  </span>
+</li>
+		
+</div>		
+	</body>
+
+</html>

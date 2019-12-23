@@ -1,0 +1,2046 @@
+{
+	"4 1/16_15M": {
+		"image": "4 1 16 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "6 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "9 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-155"
+			}
+		]
+	},
+	"7 1/16_15M": {
+		"image": "7 1 16 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/2\"",
+				"code": "TAP END STUD",
+				"stud_length": "8 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "13\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-156"
+			}
+		]
+	},
+	"7 1/16_2M": {
+		"image": "7 1 16 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-45"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-45"
+			}
+		]
+	},
+	"13 5/8_20M": {
+		"image": "13 5 8 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "3\"",
+				"code": "TAP END STUD",
+				"stud_length": "18 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "3\"",
+				"code": "STUD_BOLT",
+				"stud_length": "29 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-159"
+			}
+		]
+	},
+	"9_20M": {
+		"image": "9 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2 1/2\"",
+				"code": "TAP END STUD",
+				"stud_length": "13 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2 1/2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "21 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-157"
+			}
+		]
+	},
+	"2 1/16_20M": {
+		"image": "2 1 16 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "8 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-152"
+			}
+		]
+	},
+	"2 9/16_5M": {
+		"image": "2 9 16 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-27"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-27"
+			}
+		]
+	},
+	"16 3/4_3M": {
+		"image": "16 3 4 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 5/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "8 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 5/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "12 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-66"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-66"
+			}
+		]
+	},
+	"3 1/16_10M": {
+		"image": "3 1 16 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1\"",
+				"code": "TAP END STUD",
+				"stud_length": "5\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-154"
+			}
+		]
+	},
+	"5 1/8_15M": {
+		"image": "5 1 8 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/2\"",
+				"code": "TAP END STUD",
+				"stud_length": "7 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "11 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-169"
+			}
+		]
+	},
+	"18 3/4_15M": {
+		"image": "18 3 4 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "3\"",
+				"code": "TAP END STUD",
+				"stud_length": "16 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "3\"",
+				"code": "STUD_BOLT",
+				"stud_length": "26 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-164"
+			}
+		]
+	},
+	"11_2M": {
+		"image": "11 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "6 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "9 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-53"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-53"
+			}
+		]
+	},
+	"16 3/4_10M": {
+		"image": "16 3 4 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "11\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "17 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 24.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-162"
+			}
+		]
+	},
+	"11_10M": {
+		"image": "11 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "9 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "15 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-158"
+			}
+		]
+	},
+	"30_720": {
+		"image": "30 720.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "9 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "13 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 28.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-95"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "-"
+			}
+		]
+	},
+	"4 1/16_3M": {
+		"image": "4 1 16 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-37"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-37"
+			}
+		]
+	},
+	"30_2M": {
+		"image": "30 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 5/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "9 1/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 5/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "14 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 32.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-303"
+			}
+		]
+	},
+	"2 1/16_3M": {
+		"image": "2 1 16 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "6 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-24"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-24"
+			}
+		]
+	},
+	"3 1/8_2M": {
+		"image": "3 1 8 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "5 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-31"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-31"
+			}
+		]
+	},
+	"1 13/16_15M": {
+		"image": "1 13 16 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "6\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-151"
+			}
+		]
+	},
+	"5 1/8_2M": {
+		"image": "5 1 8 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 1/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-41"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-41"
+			}
+		]
+	},
+	"7 1/16_5M": {
+		"image": "7 1 16 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "7 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "11 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-46"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-46"
+			}
+		]
+	},
+	"21 1/4_10M": {
+		"image": "21 1 4 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2 1/2\"",
+				"code": "TAP END STUD",
+				"stud_length": "15 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2 1/2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "24 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 24.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-166"
+			}
+		]
+	},
+	"1 13/16_10M": {
+		"image": "1 13 16 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "3 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "5 1/2 \"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-151"
+			}
+		]
+	},
+	"26 3/4_2M": {
+		"image": "26 3 4 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "8 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "14 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-167"
+			}
+		]
+	},
+	"4 1/16_20M": {
+		"image": "4 1 16 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "8 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "12 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-155"
+			}
+		]
+	},
+	"2 9/16_10M": {
+		"image": "2 9 16 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "6 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-153"
+			}
+		]
+	},
+	"13 5/8_5M": {
+		"image": "13 5 8 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2 1/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "11 7/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2 1/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "18\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-63"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-63"
+			}
+		]
+	},
+	"3 1/16_15M": {
+		"image": "3 1 16 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "8\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-154"
+			}
+		]
+	},
+	"7 1/16_10M": {
+		"image": "7 1 16 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/2\"",
+				"code": "TAP END STUD",
+				"stud_length": "7 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "11 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-156"
+			}
+		]
+	},
+	"11_3M": {
+		"image": "11 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "7\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "10\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-53"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-53"
+			}
+		]
+	},
+	"2 9/16_2M": {
+		"image": "2 9 16 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "5 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-26"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-26"
+			}
+		]
+	},
+	"9_2M": {
+		"image": "9 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 7/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "8 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-49"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-49"
+			}
+		]
+	},
+	"3 1/8_5M": {
+		"image": "3 1 8 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-35"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-35"
+			}
+		]
+	},
+	"5 1/8_5M": {
+		"image": "5 1 8 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/2\"",
+				"code": "TAP END STUD",
+				"stud_length": "7 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "10 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-44"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-44"
+			}
+		]
+	},
+	"13 5/8_15M": {
+		"image": "13 5 8 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2 1/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "13 1/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2 1/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "21 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-159"
+			}
+		]
+	},
+	"18 3/4_5M": {
+		"image": "18 3 4 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2\"",
+				"code": "TAP END STUD",
+				"stud_length": "11 1/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "17 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-163"
+			}
+		]
+	},
+	"2 9/16_15M": {
+		"image": "2 9 16 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 7/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-153"
+			}
+		]
+	},
+	"13 5/8_2M": {
+		"image": "13 5 8 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "6 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "9 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-57"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-57"
+			}
+		]
+	},
+	"2 1/16_10M": {
+		"image": "2 1 16 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "3 7/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "5 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-152"
+			}
+		]
+	},
+	"26 3/4_3M": {
+		"image": "26 3 4 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2\"",
+				"code": "TAP END STUD",
+				"stud_length": "11\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "17 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 24.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-168"
+			}
+		]
+	},
+	"9_10M": {
+		"image": "9 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/2\"",
+				"code": "TAP END STUD",
+				"stud_length": "8 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "13 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-157"
+			}
+		]
+	},
+	"21 1/4_5M": {
+		"image": "21 1 4 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2\"",
+				"code": "TAP END STUD",
+				"stud_length": "11 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "19\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 24.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-165"
+			}
+		]
+	},
+	"11_20M": {
+		"image": "11 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2 3/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "15\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2 3/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "23 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-158"
+			}
+		]
+	},
+	"16 3/4_5M": {
+		"image": "16 3 4 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "9 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "14 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-162"
+			}
+		]
+	},
+	"2 1/16_5M": {
+		"image": "2 1 16 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "6 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-24"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-24"
+			}
+		]
+	},
+	"4 1/16_5M": {
+		"image": "4 1 16 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "6 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "8 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-39"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-39"
+			}
+		]
+	},
+	"2 9/16_3M": {
+		"image": "2 9 16 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-27"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-27"
+			}
+		]
+	},
+	"13 5/8_10M": {
+		"image": "13 5 8 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "11\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "17 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-159"
+			}
+		]
+	},
+	"9_3M": {
+		"image": "9 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "6 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "9 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-49"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-49"
+			}
+		]
+	},
+	"2 1/16_15M": {
+		"image": "2 1 16 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "6 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-152"
+			}
+		]
+	},
+	"30_1440": {
+		"image": "30 1440.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2\"",
+				"code": "TAP END STUD",
+				"stud_length": "10 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "15 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 28.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-95"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "-"
+			}
+		]
+	},
+	"1 13/16_20M": {
+		"image": "1 13 16 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1\"",
+				"code": "STUD_BOLT",
+				"stud_length": "7 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-151"
+			}
+		]
+	},
+	"9_5M": {
+		"image": "9 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 5/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "8 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 5/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "12 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-50"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-50"
+			}
+		]
+	},
+	"7 1/16_3M": {
+		"image": "7 1 16 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 7/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "8 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-45"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-45"
+			}
+		]
+	},
+	"4 1/16_10M": {
+		"image": "4 1 16 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "5 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "8 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-155"
+			}
+		]
+	},
+	"13 5/8_3M": {
+		"image": "13 5 8 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "7 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "10 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-57"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-57"
+			}
+		]
+	},
+	"5 1/8_10M": {
+		"image": "5 1 8 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "6\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "9 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-169"
+			}
+		]
+	},
+	"18 3/4_10M": {
+		"image": "18 3 4 10.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2 1/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "14\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2 1/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "22 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-164"
+			}
+		]
+	},
+	"2 9/16_20M": {
+		"image": "2 9 16 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "6 1/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "9 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-153"
+			}
+		]
+	},
+	"7 1/16_20M": {
+		"image": "7 1 16 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2\"",
+				"code": "TAP END STUD",
+				"stud_length": "11 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "17 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-156"
+			}
+		]
+	},
+	"16 3/4_2M": {
+		"image": "16 3 4 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/2\"",
+				"code": "TAP END STUD",
+				"stud_length": "7 1/2\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "10 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-65"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-65"
+			}
+		]
+	},
+	"9_15M": {
+		"image": "9 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "10 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "16\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 16.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-157"
+			}
+		]
+	},
+	"21 1/4_2M": {
+		"image": "21 1 4 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 5/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "8 3/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 5/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "12 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 24.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-73"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-73"
+			}
+		]
+	},
+	"3 1/16_20M": {
+		"image": "3 1 16 20.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 3/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "6 3/4\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 3/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "10 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-154"
+			}
+		]
+	},
+	"11_15M": {
+		"image": "11 15.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2\"",
+				"code": "TAP END STUD",
+				"stud_length": "12\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "19 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-158"
+			}
+		]
+	},
+	"4 1/16_2M": {
+		"image": "4 1 16 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "6 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-37"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-37"
+			}
+		]
+	},
+	"20 3/4_3M": {
+		"image": "20 3 4 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "2\"",
+				"code": "TAP END STUD",
+				"stud_length": "10 1/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "2\"",
+				"code": "STUD_BOLT",
+				"stud_length": "15\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 20.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-74"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-74"
+			}
+		]
+	},
+	"30_3M": {
+		"image": "30 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "11\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "17 3/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 32.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "-"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "BX-303"
+			}
+		]
+	},
+	"2 1/16_2M": {
+		"image": "2 1 16 2.jpg",
+		"stud": [
+			{
+				"stud_diameter": "5/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "3 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "5/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "5\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-23"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-23"
+			}
+		]
+	},
+	"3 1/8_3M": {
+		"image": "3 1 8 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "4 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "6 1/2\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-31"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-31"
+			}
+		]
+	},
+	"11_5M": {
+		"image": "11 5.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 7/8\"",
+				"code": "TAP END STUD",
+				"stud_length": "9 5/8\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 7/8\"",
+				"code": "STUD_BOLT",
+				"stud_length": "14 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 12.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-54"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-54"
+			}
+		]
+	},
+	"5 1/8_3M": {
+		"image": "5 1 8 3.jpg",
+		"stud": [
+			{
+				"stud_diameter": "1 1/4\"",
+				"code": "TAP END STUD",
+				"stud_length": "6\"",
+				"text": "双头螺栓"
+			}, {
+				"stud_diameter": "1 1/4\"",
+				"code": "STUD_BOLT",
+				"stud_length": "8 1/4\"",
+				"text": "全牙螺栓"
+			}
+		],
+		"hole_number": 8.0,
+		"ring_number": [
+			{
+				"code": "STANDARD",
+				"text": "标准",
+				"value": "R-41"
+			}, {
+				"code": "PRESSURE ENERGIZED",
+				"text": "自紧",
+				"value": "RX-41"
+			}
+		]
+	}
+}

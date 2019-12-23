@@ -1,0 +1,82 @@
+{
+  "index.html": {
+    "refer": [
+      "item2.html"
+    ],
+    "resources": []
+  },
+  "item2.html": {
+    "refer": [
+      "image.html"
+    ],
+    "resources": []
+  },
+  "login.html": {
+    "refer": [
+      "main.html",
+      "index.html",
+      "reg.html"
+    ],
+    "resources": []
+  },
+  "reg.html": {
+    "refer": [
+      "login.html"
+    ],
+    "resources": []
+  },
+  "tab-webview-main.html": {
+    "resources": [
+      "tab-webview-subpage-about.html"
+    ],
+    "refer": [
+      "tab-webview-subpage-about.html",
+      "tab-webview-subpage-setting.html",
+      "tab-webview-subpage-chat.html",
+      "tab-webview-subpage-contact.html"
+    ]
+  },
+  "main.html": {
+    "resources": [
+      "tab-webview-subpage-about.html",
+      "index.html",
+      "tab-about.html"
+    ],
+    "refer": [
+      "tab-webview-subpage-about.html",
+      "tab-webview-subpage-setting.html",
+      "tab-webview-subpage-chat.html",
+      "tab-webview-subpage-contact.html",
+      "index.html",
+      "item2.html",
+      "tab-statics.html",
+      "tab-about.html",
+      "statics.html",
+      "control.html"
+    ]
+  },
+  "tab-about.html": {
+    "refer": [
+      "index.html"
+    ],
+    "resources": []
+  },
+  "image.html": {
+    "refer": [
+      "main.html"
+    ],
+    "resources": []
+  },
+  "statics.html": {
+    "refer": [
+      "staticsResult.html",
+      "tempstatic.html"
+    ],
+    "resources": []
+  },
+  "image_test.html": {
+    "refer": [
+      "index.html"
+    ]
+  }
+}
